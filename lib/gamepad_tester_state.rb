@@ -20,7 +20,7 @@ module GamepadTester
       p gamepad_name
       if gamepad_name.include?("ps4")
         @gamepads << PS4Controller.new(gamepad_id)
-      elsif gamepad_name.include?("3360") or gamepad_name.include?("xinput")
+      elsif gamepad_name.include?("360") or gamepad_name.include?("xinput")
         @gamepads << XBox360Controller.new(gamepad_id)
       else
         puts "Unknown gamepad: #{gamepad_name}, defaulting to NES Gamepad..."
