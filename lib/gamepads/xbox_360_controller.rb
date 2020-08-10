@@ -61,8 +61,8 @@ module GamepadTester
       @border.each { |pt| pt.x *= ratio; pt.y *= ratio }
 
       @inputs = [
-        Joystick.new(self, :left, x: 3.0, y: 2.5, radius: 0.75),
-        Joystick.new(self, :right, x: 11.5, y: 6.5, radius: 0.75),
+        Joystick.new(self, :left, x: 3.0, y: 2.5, radius: 0.75, button_id: "BUTTON_10"),
+        Joystick.new(self, :right, x: 11.5, y: 6.5, radius: 0.75, button_id: "BUTTON_11"),
 
         Trigger.new(self, :left, x: 7.0, y: 10, height: 2.0),
         Trigger.new(self, :right, x: 9.5, y: 10, height: 2.0),
@@ -70,19 +70,19 @@ module GamepadTester
         DPad.new(self, nil, x: 5.5, y: 6.5, name: "D-Pad", width: 1.0, height: 0.7),
 
         # Bumpers
-        Button.new(self, 309, x: 4.5, y: 0.2, name: "Left Bumper", width: 2.0, height: 0.25),
-        Button.new(self, 310, x: 13, y: 0.2, name: "Right Bumper", width: 2.0, height: 0.25),
+        Button.new(self, "BUTTON_12", x: 4.5, y: 0.2, name: "Left Bumper", width: 2.0, height: 0.25),
+        Button.new(self, "BUTTON_13", x: 13, y: 0.2, name: "Right Bumper", width: 2.0, height: 0.25),
 
         # NAMED
-        Button.new(self, 304, x: 6.5, y: 2.5, name: "Share", hint: :round, radius: 0.375),
-        Button.new(self, 305, x: 8.8, y: 2.5, name: "Guide", hint: :round, radius: 1.0),
-        Button.new(self, 306, x: 11, y: 2.5, name: "Options", hint: :round, radius: 0.375),
+        Button.new(self, "BUTTON_7", x: 6.5, y: 2.5, name: "Back", hint: :round, radius: 0.375),
+        Button.new(self, "BUTTON_8", x: 8.8, y: 2.5, name: "Guide", hint: :round, radius: 1.0),
+        Button.new(self, "BUTTON_9", x: 11, y: 2.5, name: "Start", hint: :round, radius: 0.375),
 
         # The 4
-        Button.new(self, 300, x: 14, y: 3.5, name: "A", hint: :round, radius: 0.5, color: 0xff6f8138),
-        Button.new(self, 301, x: 15, y: 2.5, name: "B", hint: :round, radius: 0.5, color: 0xffcd2130),
-        Button.new(self, 302, x: 13, y: 2.5, name: "X", hint: :round, radius: 0.5, color: 0xff0067ab),
-        Button.new(self, 303, x: 14, y: 1.5, name: "Y", hint: :round, radius: 0.5, color: 0xffeaab37),
+        Button.new(self, "BUTTON_3", x: 14, y: 3.5, name: "A", hint: :round, radius: 0.5, color: 0xff6f8138),
+        Button.new(self, "BUTTON_4", x: 15, y: 2.5, name: "B", hint: :round, radius: 0.5, color: 0xffcd2130),
+        Button.new(self, "BUTTON_5", x: 13, y: 2.5, name: "X", hint: :round, radius: 0.5, color: 0xff0067ab),
+        Button.new(self, "BUTTON_6", x: 14, y: 1.5, name: "Y", hint: :round, radius: 0.5, color: 0xffeaab37),
       ]
 
       @label = Point2D.new(8.8, 4.7)

@@ -9,6 +9,27 @@ module GamepadTester
 
     def draw
       @gamepads.each(&:draw)
+
+      case @gamepads.size
+      when 2
+        Gosu.draw_line(
+          @window.width / 2, 0, Gosu::Color::WHITE,
+          @window.width / 2, @window.height, Gosu::Color::WHITE,
+          0
+        )
+      when 3,4
+        Gosu.draw_line(
+          @window.width / 2, 0, Gosu::Color::WHITE,
+          @window.width / 2, @window.height, Gosu::Color::WHITE,
+          0
+        )
+
+        Gosu.draw_line(
+          0, @window.height / 2, Gosu::Color::WHITE,
+          @window.width, @window.height / 2, Gosu::Color::WHITE,
+          0
+        )
+      end
     end
 
     def update
@@ -17,7 +38,8 @@ module GamepadTester
 
     def gamepad_connected(gamepad_id)
       gamepad_name = Gosu.gamepad_name(gamepad_id).downcase
-      p gamepad_name
+      puts "#{gamepad_name} [#{gamepad_id}]"
+
       if gamepad_name.include?("ps4")
         @gamepads << PS4Controller.new(gamepad_id)
       elsif gamepad_name.include?("360") or gamepad_name.include?("xinput")
