@@ -48,10 +48,13 @@ module GamepadTester
         puts "Unknown gamepad: #{gamepad_name}, defaulting to NES Gamepad..."
         @gamepads << NESGamepad.new(gamepad_id)
       end
+
+      @gamepads.sort! { |gp| gp.id }
     end
 
     def gamepad_disconnected(gamepad_id)
       @gamepads.delete_if { |gp| gp.id == gamepad_id }
+      @gamepads.sort! { |gp| gp.id }
     end
 
     def position_and_scale_gamepads
