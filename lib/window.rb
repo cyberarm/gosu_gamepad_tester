@@ -18,7 +18,7 @@ module GamepadTester
     def button_down(id)
       super
 
-      p id
+      puts "#{_get_button_constant_from_id(id)} => #{id}"
     end
 
     def needs_cursor?; true; end
@@ -29,6 +29,12 @@ module GamepadTester
 
     def gamepad_disconnected(gamepad_id)
       @state.gamepad_disconnected(gamepad_id) if @state.respond_to?(:gamepad_disconnected)
+    end
+
+    def _get_button_constant_from_id(id)
+      Gosu.constants.detect do |const|
+        Gosu.const_get(const) == id
+      end
     end
   end
 end

@@ -94,8 +94,8 @@ module GamepadTester
       @border.each { |pt| pt.y -= 7.398789559352511; raise "Y: #{pt.y}" if pt.y < 0 }
 
       @inputs = [
-        Joystick.new(self, :left, x: 5.5, y: 5.5, radius: 0.75, button_id: "BUTTON_10"),
-        Joystick.new(self, :right, x: 10.5, y: 5.5, radius: 0.75, button_id: "BUTTON_11"),
+        Joystick.new(self, :left, x: 5.5, y: 5.5, radius: 0.75, button_id: "BUTTON_7"),
+        Joystick.new(self, :right, x: 10.5, y: 5.5, radius: 0.75, button_id: "BUTTON_8"),
 
         Trigger.new(self, :left, x: 5.5, y: 7, height: 2.0),
         Trigger.new(self, :right, x: 9.5, y: 7, height: 2.0),
@@ -103,19 +103,19 @@ module GamepadTester
         DPad.new(self, nil, x: 3, y: 3, name: "D-Pad", width: 1.0, height: 0.7),
 
         # Bumpers
-        Button.new(self, "BUTTON_12", x: 3, y: 0.2, name: "Left Bumper", width: 2.0, height: 0.25),
-        Button.new(self, "BUTTON_13", x: 13, y: 0.2, name: "Right Bumper", width: 2.0, height: 0.25),
+        Button.new(self, "BUTTON_9", x: 3, y: 0.2, name: "Left Bumper", width: 2.0, height: 0.25),
+        Button.new(self, "BUTTON_10", x: 13, y: 0.2, name: "Right Bumper", width: 2.0, height: 0.25),
 
         # NAMED
-        Button.new(self, "BUTTON_7", x: 5, y: 0.7, name: "Share", width: 0.5, height: 1.0),
-        Button.new(self, "BUTTON_8", x: 8, y: 5.5, name: "Guide", hint: :round, radius: 0.25),
-        Button.new(self, "BUTTON_9", x: 11, y: 0.7, name: "Options", width: 0.5, height: 1.0),
+        Button.new(self, "BUTTON_4", x: 5, y: 0.7, name: "Share", width: 0.5, height: 1.0),
+        Button.new(self, "BUTTON_5", x: 8, y: 5.5, name: "Guide", hint: :round, radius: 0.25),
+        Button.new(self, "BUTTON_6", x: 11, y: 0.7, name: "Options", width: 0.5, height: 1.0),
 
         # The 4
-        Button.new(self, "BUTTON_3", x: 13, y: 4, name: "Cross", hint: :round, radius: 0.5, color: 0xff6b8aca),
-        Button.new(self, "BUTTON_4", x: 14, y: 3, name: "Circle", hint: :round, radius: 0.5, color: 0xffcf5357),
-        Button.new(self, "BUTTON_5", x: 12, y: 3, name: "Square", hint: :round, radius: 0.5, color: 0xffd98cc2),
-        Button.new(self, "BUTTON_6", x: 13, y: 2, name: "Triangle", hint: :round, radius: 0.5, color: 0xff37d194),
+        Button.new(self, "BUTTON_0", x: 13, y: 4, name: "Cross", hint: :round, radius: 0.5, color: 0xff6b8aca),
+        Button.new(self, "BUTTON_1", x: 14, y: 3, name: "Circle", hint: :round, radius: 0.5, color: 0xffcf5357),
+        Button.new(self, "BUTTON_2", x: 12, y: 3, name: "Square", hint: :round, radius: 0.5, color: 0xffd98cc2),
+        Button.new(self, "BUTTON_3", x: 13, y: 2, name: "Triangle", hint: :round, radius: 0.5, color: 0xff37d194),
       ]
 
       @label = Point2D.new(8, 4.8)
