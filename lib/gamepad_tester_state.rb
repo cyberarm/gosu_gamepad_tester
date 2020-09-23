@@ -62,12 +62,12 @@ module GamepadTester
       when 1
         gamepad = @gamepads.first
         gamepad.x, gamepad.y = PADDING, PADDING
-        gamepad.scale = (@window.width - PADDING * 2) / gamepad.width
+        gamepad.scale = gamepad_scale(gamepad, @window.width + PADDING * 2)
       when 2
         x = PADDING
         @gamepads.each do |gamepad|
           gamepad.x, gamepad.y = x, PADDING
-          gamepad.scale = (@window.width / 2 - PADDING * 2) / gamepad.width
+          gamepad.scale = gamepad_scale(gamepad, @window.width + PADDING * 2)
 
           x += (gamepad.scale * gamepad.width) + PADDING * 2
         end
@@ -76,7 +76,7 @@ module GamepadTester
         y = PADDING
         @gamepads.each do |gamepad|
           gamepad.x, gamepad.y = x, y
-          gamepad.scale = (@window.width / 2 - PADDING * 2) / gamepad.width
+          gamepad.scale = gamepad_scale(gamepad, @window.width + PADDING * 2)
 
           x += (gamepad.scale * gamepad.width) + PADDING * 2
           if x > @window.width
@@ -85,6 +85,12 @@ module GamepadTester
           end
         end
       end
+    end
+
+    def gamepad_scale(gamepad, max_size)
+      scale = (@window.width / 2 - PADDING * 2) / gamepad.width
+
+      return scale
     end
   end
 end

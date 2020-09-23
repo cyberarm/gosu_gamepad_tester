@@ -1,6 +1,6 @@
 begin
   require_relative "../ffi-gosu/lib/gosu"
-rescue => LoadError
+rescue LoadError
   require "gosu"
 end
 require "gosu_more_drawables"

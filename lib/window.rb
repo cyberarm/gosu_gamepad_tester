@@ -1,7 +1,7 @@
 module GamepadTester
   class Window < Gosu::Window
     def initialize
-      super(640, 480, false, resizable: true)
+      super(640, 480, false, 16.6667, true)
 
       self.caption = "Gosu Gamepad Tester"
       @state = GamepadTester::GamepadTesterState.new(self)
